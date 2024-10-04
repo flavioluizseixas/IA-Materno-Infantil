@@ -1,0 +1,45 @@
+
+# Tarefa 4
+
+## Análise Preditiva da Doença Cardíaca Usando Classificadores de Aprendizado de Máquina
+
+Nesta tarefa, você realizará uma análise preditiva da presença de doença cardíaca utilizando um conjunto de dados clínicos. O objetivo é aplicar diferentes algoritmos de aprendizado de máquina para prever a presença de doença cardíaca, selecionar o modelo mais eficaz e visualizar os resultados.
+
+## Dataset
+O dataset contém informações sobre pacientes e fatores de risco associados a doenças cardíacas. As principais características incluem:
+- Idade
+- Sexo
+- Tipo de dor no peito
+- Pressão arterial em repouso
+- Nível de colesterol
+- Frequência cardíaca máxima
+
+Você utilizará o dataset Heart Disease disponível no repositório UCI. O arquivo deve ser salvo como heart.csv.
+
+## Passos
+1. Leitura do Dataset: Carregue o dataset utilizando a biblioteca pandas.
+
+2. Pré-processamento:
+- Defina X como todas as colunas, exceto a coluna target.
+- Escale os dados utilizando MinMaxScaler para normalizar as variáveis.
+- Divida os dados em conjuntos de treinamento e teste (80% para treinamento e 20% para teste).
+
+3. Modelos de Classificação:
+- Defina e treine os seguintes modelos:
+    - Árvore de Decisão
+    - Random Forest
+    - SVM (Máquina de Vetores de Suporte)
+    - Regressão Logística
+- Busca de Hiperparâmetros:
+    - Utilize GridSearchCV para ajustar os hiperparâmetros de cada modelo. Os parâmetros a serem ajustados são:
+        - Árvore de Decisão: profundidade máxima (max_depth)
+        - Random Forest: número de estimadores (n_estimators)
+        - SVM: valor de penalização (C) e parâmetro de kernel (gamma)
+        - Regressão Logística: valor de penalização (C)
+
+4. Avaliação dos Modelos:
+- Avalie a performance de cada modelo utilizando a métrica de acurácia.
+Imprima um relatório de classificação para o modelo que obteve a melhor performance.
+- Calcule e visualize a matriz de confusão usando seaborn.
+Visualização da Árvore de Decisão:
+- Para o modelo de Árvore de Decisão, visualize a árvore usando a biblioteca graphviz.
