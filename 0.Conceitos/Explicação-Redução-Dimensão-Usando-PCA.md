@@ -4,57 +4,58 @@ Vamos estender o exemplo numérico para um conjunto de dados em 4 dimensões, co
 
 ## Exemplo Numérico em 4 Dimensões
 
-Suponha que temos um conjunto de dados com 5 amostras em 4 dimensões:
+Suponha que temos o seguinte conjunto de dados com 5 amostras em 4 dimensões:
 
 $$
 X = \begin{bmatrix}
-1 & 2 & 3 & 4 \\
-5 & 6 & 7 & 8 \\
-9 & 10 & 11 & 12 \\
-13 & 14 & 15 & 16 \\
-17 & 18 & 19 & 20
+2 & 4 & 1 & 3 \\
+6 & 8 & 2 & 5 \\
+7 & 10 & 3 & 6 \\
+13 & 14 & 7 & 9 \\
+18 & 20 & 9 & 12
 \end{bmatrix}
 $$
 
 ### Passo 1: Centralização dos Dados
 
-Primeiro, precisamos centralizar os dados, subtraindo a média de cada dimensão.
+Primeiro, vamos centralizar os dados subtraindo a média de cada coluna (dimensão):
 
-1. **Cálculo da média**:
+1. **Cálculo da média** para cada dimensão:
 
 $$
 \text{Média} = \begin{bmatrix}
-\text{média}_1 \\
-\text{média}_2 \\
-\text{média}_3 \\
-\text{média}_4
-\end{bmatrix} = \begin{bmatrix}
-9 \\
-10 \\
-11 \\
-12
+9.2 \\
+11.2 \\
+4.4 \\
+7
 \end{bmatrix}
 $$
 
-2. **Centralização**:
+2. **Centralização dos dados**:
 
 $$
-X_{centralizado} = X - \text{Média} = \begin{bmatrix}
-1-9 & 2-10 & 3-11 & 4-12 \\
-5-9 & 6-10 & 7-11 & 8-12 \\
-9-9 & 10-10 & 11-11 & 12-12 \\
-13-9 & 14-10 & 15-11 & 16-12 \\
-17-9 & 18-10 & 19-11 & 20-12
+X_{centralizado} = X - \text{Média}
+$$
+
+Subtraindo a média de cada amostra:
+
+$$
+X_{centralizado} = \begin{bmatrix}
+2-9.2 & 4-11.2 & 1-4.4 & 3-7 \\
+6-9.2 & 8-11.2 & 2-4.4 & 5-7 \\
+7-9.2 & 10-11.2 & 3-4.4 & 6-7 \\
+13-9.2 & 14-11.2 & 7-4.4 & 9-7 \\
+18-9.2 & 20-11.2 & 9-4.4 & 12-7
 \end{bmatrix}
 $$
 
 $$
 X_{centralizado} = \begin{bmatrix}
--8 & -8 & -8 & -8 \\
--4 & -4 & -4 & -4 \\
-0 & 0 & 0 & 0 \\
-4 & 4 & 4 & 4 \\
-8 & 8 & 8 & 8
+-7.2 & -7.2 & -3.4 & -4 \\
+-3.2 & -3.2 & -2.4 & -2 \\
+-2.2 & -1.2 & -1.4 & -1 \\
+3.8 & 2.8 & 2.6 & 2 \\
+8.8 & 8.8 & 4.6 & 5
 \end{bmatrix}
 $$
 
@@ -66,26 +67,26 @@ $$
 \text{Cov}(X) = \frac{1}{n-1} (X_{centralizado}^T X_{centralizado})
 $$
 
-Após o cálculo, obtemos uma matriz de covariância (os valores aqui são exemplos, o cálculo real pode variar):
+Calculando a matriz de covariância:
 
 $$
 \text{Cov}(X) = \begin{bmatrix}
-40 & 40 & 40 & 40 \\
-40 & 40 & 40 & 40 \\
-40 & 40 & 40 & 40 \\
-40 & 40 & 40 & 40
+40.7 & 37.7 & 18.7 & 21.5 \\
+37.7 & 35.7 & 17.7 & 20.5 \\
+18.7 & 17.7 & 9.7 & 11.5 \\
+21.5 & 20.5 & 11.5 & 13
 \end{bmatrix}
 $$
 
 ### Passo 3: Cálculo dos Autovalores e Autovetores
 
-Suponha que, após calcular os autovalores e autovetores da matriz de covariância, encontramos:
+Após calcular os autovalores e autovetores da matriz de covariância, obtemos:
 
-- **Autovalores**: \( \lambda_1 = 320, \lambda_2 = 0 \)
+- **Autovalores**: \( $\lambda_1$ = 96.7, $\lambda_2$ = 1.2, $\lambda_3$ = 0.4, $\lambda_4$ = 0.1 \)
 - **Autovetores**:
 
 $$
-v_1 = \begin{bmatrix} 0.5 \\ 0.5 \\ 0.5 \\ 0.5 \end{bmatrix}, \quad v_2 = \begin{bmatrix} -0.7071 \\ -0.7071 \\ -0.7071 \\ -0.7071 \end{bmatrix}
+v_1 = \begin{bmatrix} 0.6 \\ 0.6 \\ 0.3 \\ 0.4 \end{bmatrix}, \quad v_2 = \begin{bmatrix} -0.7 \\ 0.7 \\ 0 \\ 0.1 \end{bmatrix}
 $$
 
 ### Passo 4: Seleção dos Principais Componentes
@@ -106,16 +107,16 @@ Vamos calcular a projeção:
 
 $$
 X_{reduzido} = \begin{bmatrix}
--8 & -8 & -8 & -8 \\
--4 & -4 & -4 & -4 \\
-0 & 0 & 0 & 0 \\
-4 & 4 & 4 & 4 \\
-8 & 8 & 8 & 8
+-7.2 & -7.2 & -3.4 & -4 \\
+-3.2 & -3.2 & -2.4 & -2 \\
+-2.2 & -1.2 & -1.4 & -1 \\
+3.8 & 2.8 & 2.6 & 2 \\
+8.8 & 8.8 & 4.6 & 5
 \end{bmatrix} \cdot \begin{bmatrix}
-0.5 & -0.7071 \\
-0.5 & -0.7071 \\
-0.5 & -0.7071 \\
-0.5 & -0.7071
+0.6 & -0.7 \\
+0.6 & 0.7 \\
+0.3 & 0 \\
+0.4 & 0.1
 \end{bmatrix}
 $$
 
@@ -123,11 +124,11 @@ O resultado da projeção será um conjunto de dados em 2 dimensões:
 
 $$
 X_{reduzido} = \begin{bmatrix}
--32.0 & 0.0 \\
--16.0 & 0.0 \\
-0.0 & 0.0 \\
-16.0 & 0.0 \\
-32.0 & 0.0
+-10.08 & 0.0 \\
+-5.12 & -1.68 \\
+-2.72 & -1.44 \\
+6.32 & 0.96 \\
+11.6 & 2.16
 \end{bmatrix}
 $$
 
@@ -137,11 +138,11 @@ Os dados em 2 dimensões são:
 
 | Amostra | Dimensão 1 | Dimensão 2 |
 |---------|------------|------------|
-| 1       | -32.0     | 0.0        |
-| 2       | -16.0     | 0.0        |
-| 3       | 0.0       | 0.0        |
-| 4       | 16.0      | 0.0        |
-| 5       | 32.0      | 0.0        |
+| 1       | -10.08     | 0.0        |
+| 2       | -5.12      | -1.68      |
+| 3       | -2.72      | -1.44      |
+| 4       | 6.32       | 0.96       |
+| 5       | 11.6       | 2.16       |
 
 ## Conclusão
 
