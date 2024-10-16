@@ -56,7 +56,7 @@ $$
 \det(A - \lambda I) = \det \begin{bmatrix} 4 - \lambda & 1 \\ 2 & 3 - \lambda \end{bmatrix} = 0
 $$
 
-O determinante de uma matriz \( 2 \times 2 \) é calculado como:
+O determinante de uma matriz \( 2 $\times$ 2 \) é calculado como:
 
 $$
 (4 - \lambda)(3 - \lambda) - (2)(1) = 0
