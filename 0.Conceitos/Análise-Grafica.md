@@ -36,16 +36,10 @@ plt.show()
 ```
 
 ### Análise Bivariada
-- **Gráfico de Barras Agrupadas**: Compara uma variável qualitativa entre diferentes grupos de outra variável qualitativa, permitindo uma comparação direta.
-- **Gráfico de Barras Empilhadas**: Similar ao gráfico de barras agrupadas, mas com as barras empilhadas para representar a soma das frequências de cada categoria.
-- **Mapa de Calor de Frequências**: Em tabelas cruzadas, este gráfico utiliza cores para indicar a frequência da combinação entre duas variáveis qualitativas.
+- **Gráfico de Dispersão (Scatter Plot)**: Excelente para explorar relações entre duas variáveis quantitativas, evidenciando tendências ou correlações.
+- **Gráfico de Linha (Linha de Tendência)**: Útil quando uma variável quantitativa depende de outra em uma sequência temporal, mostrando mudanças ao longo do tempo.
+- **Mapa de Calor (Heatmap)**: Em uma matriz de correlação, é uma ótima ferramenta para visualizar a força e a direção das relações entre múltiplas variáveis quantitativas.
 
-## 3. Variáveis Mistas (Quantitativas e Qualitativas)
-Ao analisar uma variável quantitativa em relação a uma variável qualitativa, algumas opções de visualização gráfica são particularmente úteis:
-
-- **Boxplot por Categoria**: Compara a distribuição de uma variável quantitativa entre diferentes níveis de uma variável qualitativa.
-- **Gráfico de Violino**: Alternativa ao boxplot que mostra a densidade de distribuição para cada categoria.
-- **Gráfico de Barras com Médias e Intervalos de Confiança**: Exibe as médias de uma variável quantitativa por categoria, facilitando a comparação entre grupos.
 
 ### Exemplo de Código em Python
 ```python
